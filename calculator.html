@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <center>
+        <h3>Simple Calculator</h3>
+    <table>
+        <tr>
+            <td><input type="number" id="1st" name="1st" placeholder="input 1st value" pattern="[0-9]+" required></td>
+            <td><input type="number" id="2nd" placeholder="input 2nd value" name="2nd" pattern="[0-9]+" required></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><input type="submit" id="sum" value="+" onclick="sum()"></td>
+            <td><input type="submit" id="sub" value="-" onclick="sub()"></td>
+            <td><input type="submit" id="mul" value="x" onclick="mul()"></td>
+            <td><input type="submit" id="div" value="/" onclick="div()"></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <b><div id="output"></div></b>
+            </td>
+        </tr>
+    </table>
+    </center>
+    <script>
+        function sum(){
+            const a =parseInt(document.getElementById("1st").value);
+            const b = parseInt (document.getElementById("2nd").value);
+            var output = a+b;
+            document.getElementById("output").innerHTML = "Sum Output : "+output;
+        }
+        function sub(){
+            const a =parseInt(document.getElementById("1st").value);
+            const b = parseInt (document.getElementById("2nd").value);
+            var output =0;
+            if(a>b){
+                output += (a-b);
+            }
+            else{
+                output += (b-a);
+            }
+            document.getElementById("output").innerHTML = "Sub Output : "+output;
+        }
+        function mul(){
+            const a =parseInt(document.getElementById("1st").value);
+            const b = parseInt (document.getElementById("2nd").value);
+            var output = a*b;
+            document.getElementById("output").innerHTML = "Mul Output : "+output;
+        }
+        function div(){
+            const a =parseInt(document.getElementById("1st").value);
+            const b = parseInt (document.getElementById("2nd").value);
+            var output = 0;
+            if(b>0){
+                output += (a/b);
+                document.getElementById("output").innerHTML = "Div Output : "+output;
+            }
+            else{
+                document.getElementById("output").innerHTML = "Syntex Error";
+            }
+        }
+    </script>
+</body>
+</html>
